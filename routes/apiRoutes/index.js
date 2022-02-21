@@ -29,15 +29,18 @@ const promptUser = () => {
 
     if (choices === 'View All Departments') {
         viewDept();
+        promptUser();
 
     }
 
     if (choices === 'View All Roles') {
         viewRole();
+        promptUser();
     }
 
     if (choices === 'View All Employees') {
         viewEmployee();
+        promptUser();
     }
 
     if (choices === 'Close App'){
