@@ -1,9 +1,9 @@
 const express = require('express');
+const db = require('../../db/connection');
 const mysql = require('mysql2');
-const db = require('../../db/connection')
 const inquirer = require('inquirer');
 
-const viewDept = () => {
+const viewDepts = () => {
     const sql = `SELECT * FROM department`;
 
     db.query(sql, (err,rows) => {
@@ -13,33 +13,5 @@ const viewDept = () => {
         console.log(rows);
     });
 };
-const addDept = () => {
-    inquirer.prompt ([
-        {
-            type: 'input',
-            name: 'addDept',
-            message: 'What department would you like to add?',
-            validate: addDept => {
-                if (addDept) {
-                    return true;    
-                } else {
-                    console.log('Please provide the name of the new department')
-                    return false;
-                }
-            }
-        }
-    ])
-    .then(answer => {
-        const sql = `INSERT INTO department (name) VALUES (?)`;
-        db.query(sql, answer.addDept, (err, result) => {
-            if (err) throw err;
-            console.log('Added' + answer.addDept + 'to departments');
-            viewDept();
-        })
-    })
-}
 
-module.exports = {
-    viewDept,
-    addDept
-};
+module.exports = { viewDepts };

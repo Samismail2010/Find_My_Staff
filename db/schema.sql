@@ -1,6 +1,11 @@
 /*Starts MySQL, basically letting it know to drop the department if it was already
 there. Also, create DATABASE and enter the database*/
 DROP DATABASE IF EXISTS staff;
+
+DROP TABLE IF EXIST department;
+DROP TABLE IF EXIST role;
+DROP TABLE IF EXIST employee;
+
 CREATE DATABASE staff;
 USE staff;
 
@@ -13,9 +18,9 @@ employee belongs to*/
 CREATE TABLE role (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
-    salary DECIMAL(9,2)
+    salary DECIMAL(9,2),
     department_id INTEGER,
-    CONTRAINT fk_department FOREIGN KEY (department_id) REFRENCES department(id) ON DELETE CASCADE
+    CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
 );
 /* creating table section, first name/last name role of employee and who
 are their assigned manager. manager will be set to NULL*/
