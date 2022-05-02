@@ -1,13 +1,3 @@
-/*Starts MySQL, basically letting it know to drop the department if it was already
-there. Also, create DATABASE and enter the database*/
-DROP DATABASE IF EXISTS department_db;
-
-DROP TABLE IF EXIST department;
-DROP TABLE IF EXIST role;
-DROP TABLE IF EXIST employee;
-
-CREATE DATABASE department_db;
-USE department_db;
 
 CREATE TABLE department (
     id INTEGER AUTO_INCREMENT PRIMARY KEY,
