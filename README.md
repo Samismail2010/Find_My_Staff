@@ -32,7 +32,11 @@ Application used to view and update employee database information.
 Manage Staff information
 
 ## Video-Walkthough
-https://drive.google.com/file/d/19iDEMWGlpETIirS8uH7qIVkIiCisdapL/view
+
+
+https://user-images.githubusercontent.com/88996409/166394061-2ecbfac3-6160-40f3-8845-8680d4cf8f2b.mp4
+
+
 
 ## License
 [![License](https://img.shields.io/badge/License-Apache_2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0) This project is covered by the Apache license.
